@@ -1,0 +1,30 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title %}
+    {{ 'Test for layered permissions' }}
+{% endblock content_title %}
+
+{% block main %}
+    <h3>Description:</h3>
+    <p> The purpose of this example is to explore a granular permission
+        system. The example consist of just one (business) entity, named
+        contact. We have the folowing other entities: <br>
+    </p>
+    <ul>
+        <li>Groups, which is a level within the organization. Members of a
+            group can access all entities lower in the hierarchy.
+        Members of a group can never access entities higher in the hierarchy.
+        </li>
+        <li>Users, speaks for itself</li>
+        <li>Roles (not sure weather to use them)</li>
+        <li>Permissions, what can somebody do</li>
+    </ul>
+    <p>There is a ContactVoter that currenty rendomly give access to the entity an to one or more actions</p>
+
+    <h3>What to do:</h3>
+    <p>
+        Adjust the Voter that is uses the hierarchy for the permissions.
+    </p>
+
+{% endblock main%}
